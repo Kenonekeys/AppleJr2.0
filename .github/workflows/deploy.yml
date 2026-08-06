@@ -1,4 +1,4 @@
-name: Auto Deploy Website (Extreme Runners)
+name: Auto Deploy Website (Fast Runners Only)
 
 on:
   push:
@@ -11,28 +11,9 @@ jobs:
       fail-fast: false
       matrix:
         runner:
-          # Ubuntu (x64 + ARM)
-          - ubuntu-latest
           - ubuntu-24.04
           - ubuntu-22.04
           - ubuntu-20.04
-          - ubuntu-latest-arm64
-          - ubuntu-24.04-arm64
-          - ubuntu-22.04-arm64
-
-          # macOS
-          - macos-latest
-          - macos-15
-          - macos-14
-          - macos-13
-
-          # Windows
-          - windows-latest
-          - windows-2022
-          - windows-2019
-
-          # Self-hosted (if you ever add your own)
-          - self-hosted
 
     runs-on: ${{ matrix.runner }}
 

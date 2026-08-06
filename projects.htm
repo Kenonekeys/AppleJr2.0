@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AppleJr — Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root { --bg:#0b0c10; --panel:#14151c; --accent:#4aa3ff; --text:#f5f5f7; --muted:#9fa3b7; --border:#1f2029; --radius:18px; }
+body { margin:0; font-family:-apple-system; background:var(--bg); color:var(--text); }
+
+nav { display:flex; justify-content:center; gap:20px; padding:15px; background:#14151c; border-bottom:1px solid var(--border); }
+nav a { color:var(--text); text-decoration:none; padding:8px 14px; border-radius:10px; }
+nav a:hover { background:#1f2029; }
+
+.grid { max-width:900px; margin:40px auto; padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+.card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center; }
+.icon { width:60px; height:60px; margin:0 auto 12px; border-radius:16px; background:#4aa3ff; display:flex; justify-content:center; align-items:center; font-weight:800; font-size:22px; }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="donate.html">Donate</a>
+</nav>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="icon">FE</div>
+    <h2>Fearn</h2>
+    <p>A fast, lightweight iOS utility.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">MK</div>
+    <h2>Makinon</h2>
+    <p>Experimental iOS toolkit.</p>
+  </div>
+
+  <div class="card" onclick="window.open('https://kenonekeys.github.io/AppleJr2.0/', '_blank')">
+    <div class="icon">OS</div>
+    <h2>AppleJr OS</h2>
+    <p>Web‑based desktop environment.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

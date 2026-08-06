@@ -1,4 +1,4 @@
-name: Auto Deploy Website
+name: Auto Deploy Website (All Runners)
 
 on:
   push:
@@ -7,7 +7,24 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-24.04
+          - ubuntu-22.04
+          - ubuntu-latest
+          - ubuntu-24.04-arm64
+          - ubuntu-22.04-arm64
+          - windows-latest
+          - windows-2022
+          - windows-2019
+          - macos-latest
+          - macos-15
+          - macos-14
+          - macos-13
+
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - name: Checkout
@@ -20,7 +37,7 @@ jobs:
 
   publish:
     needs: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write

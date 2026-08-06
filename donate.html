@@ -1,4 +1,41 @@
-<button onclick="window.open('https://applejr.net/donate', '_blank')"
-  style="padding:12px 20px;border:none;border-radius:12px;background:#4aa3ff;color:#050509;font-weight:600;">
-  Donate
-</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Donate — AppleJr</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; background:#05060a; color:#f5f5f7; font-family:-apple-system; }
+nav { display:flex; gap:20px; justify-content:center; padding:15px; background:#14151c; }
+nav a { color:#f5f5f7; text-decoration:none; padding:8px 14px; border-radius:10px; font-size:14px; }
+nav a:hover { background:#1f2029; }
+.container { max-width:700px; margin:40px auto; padding:20px; background:#14151c; border-radius:18px; border:1px solid #1f2029; text-align:center; }
+button { width:100%; padding:12px; border-radius:12px; border:none; background:#4aa3ff; color:#050509; font-weight:600; cursor:pointer; }
+p { color:#9fa3b7; font-size:14px; }
+.small { font-size:12px; margin-top:10px; color:#666f88; }
+</style>
+</head>
+<body>
+
+nav>
+  <a href="https://applejr.net">AppleJr</a>
+  <a href="https://fearn.applejr.net">Fearn</a>
+  <a href="https://makinon.applejr.net">Makinon</a>
+  <a href="https://sideload.applejr.net">Sideloading</a>
+  <a href="https://signer.applejr.net">IPA Signer</a>
+  <a href="https://applejr.net/donate">Donate</a>
+</nav>
+
+<div class="container">
+  <h2>Support AppleJr</h2>
+  <p>Donations help keep AppleJr, Fearn, Makinon, and all the chaos running.</p>
+
+  <button onclick="alert('Secret dev note: replace this with your real donate link when you’re ready.')">
+    Donate
+  </button>
+
+  <p class="small">Easter egg: If you donate, somewhere a virtual runner stops being “busy”. Probably.</p>
+</div>
+
+</body>
+</html>

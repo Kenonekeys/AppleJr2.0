@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FearnJR OS</title>
+<title>AppleJr 2.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* -----------------------------------------------------------
-   GLOBAL THEME
------------------------------------------------------------ */
 :root {
-  --bg: #0b0c10;
-  --panel: #14151c;
+  --bg: #050509;
+  --panel: #11121a;
   --accent: #4aa3ff;
   --accent-soft: #4aa3ff22;
   --text: #f5f5f7;
   --muted: #9fa3b7;
   --border: #262838;
-  --success: #4aff9b;
   --radius-lg: 18px;
   --radius-md: 12px;
   --radius-sm: 8px;
@@ -33,9 +29,7 @@ body {
   overflow: hidden;
 }
 
-/* -----------------------------------------------------------
-   BOOT SCREEN
------------------------------------------------------------ */
+/* BOOT */
 #boot {
   position: fixed;
   inset: 0;
@@ -56,7 +50,7 @@ body {
 }
 
 .boot-logo {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--accent);
 }
@@ -66,9 +60,7 @@ body {
   font-size: 14px;
 }
 
-/* -----------------------------------------------------------
-   DESKTOP
------------------------------------------------------------ */
+/* DESKTOP */
 #desktop {
   position: fixed;
   inset: 0;
@@ -78,9 +70,7 @@ body {
   flex-direction: column;
 }
 
-/* -----------------------------------------------------------
-   TOP BAR
------------------------------------------------------------ */
+/* TOPBAR */
 .topbar {
   height: 32px;
   display: flex;
@@ -91,9 +81,7 @@ body {
   padding: 0 12px;
 }
 
-/* -----------------------------------------------------------
-   LAUNCHER GRID
------------------------------------------------------------ */
+/* LAUNCHER GRID */
 .launcher {
   flex: 1;
   display: grid;
@@ -118,6 +106,7 @@ body {
   background: #1c1d2b;
 }
 
+/* ICONS */
 .app-icon {
   width: 40px;
   height: 40px;
@@ -131,6 +120,33 @@ body {
   color: #000;
 }
 
+/* Custom SL icon */
+.app-icon-sl {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: conic-gradient(from 210deg, #4aa3ff, #7bffb8, #ffd54a, #4aa3ff);
+  margin: 0 auto 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  color: #050509;
+  box-shadow: 0 0 0 2px #050509, 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* subtle cube feel */
+.app-icon-sl::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid rgba(5,5,9,0.35);
+  transform: rotate(8deg);
+}
+
+/* label */
 .app-title {
   font-size: 14px;
   font-weight: 600;
@@ -142,9 +158,7 @@ body {
   margin-top: 4px;
 }
 
-/* -----------------------------------------------------------
-   DOCK
------------------------------------------------------------ */
+/* DOCK */
 .dock {
   height: 70px;
   background: #11121a88;
@@ -177,9 +191,7 @@ body {
   transform: translateY(-4px);
 }
 
-/* -----------------------------------------------------------
-   APP WINDOWS
------------------------------------------------------------ */
+/* WINDOWS */
 .window {
   position: fixed;
   top: 60px;
@@ -224,9 +236,7 @@ body {
   font-size: 14px;
 }
 
-/* -----------------------------------------------------------
-   TOAST
------------------------------------------------------------ */
+/* TOAST */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -251,9 +261,9 @@ body {
 
 <body>
 
-<!-- BOOT SCREEN -->
+<!-- BOOT -->
 <div id="boot">
-  <div class="boot-logo">FearnJR</div>
+  <div class="boot-logo">AppleJr 2.0</div>
   <div class="boot-sub">Booting web OS…</div>
 </div>
 
@@ -261,134 +271,59 @@ body {
 <div id="desktop">
 
   <div class="topbar">
-    <div>FearnJR OS</div>
+    <div>AppleJr OS</div>
     <div id="clock"></div>
   </div>
 
   <div class="launcher">
 
-    <div class="app" data-window="win-fearn">
-      <div class="app-icon">F</div>
-      <div class="app-title">Fearn Repo</div>
-      <div class="app-desc">Your main project</div>
+    <!-- Existing apps (example) -->
+    <div class="app" data-window="win-applejr">
+      <div class="app-icon">AJ</div>
+      <div class="app-title">AppleJr</div>
+      <div class="app-desc">Guides & tutorials</div>
     </div>
 
-    <div class="app" data-window="win-zsign">
-      <div class="app-icon">Z</div>
-      <div class="app-title">ZSign</div>
-      <div class="app-desc">IPA signing tool</div>
-    </div>
-
-    <div class="app" data-window="win-ksign">
-      <div class="app-icon">K</div>
-      <div class="app-title">KSign</div>
-      <div class="app-desc">Signing utility</div>
-    </div>
-
-    <div class="app" data-window="win-sidestore">
-      <div class="app-icon">S</div>
-      <div class="app-title">SideStore</div>
-      <div class="app-desc">Sideloading ecosystem</div>
-    </div>
-
-    <div class="app" data-window="win-altstore">
-      <div class="app-icon">A</div>
-      <div class="app-title">AltStore</div>
-      <div class="app-desc">Classic sideloading</div>
+    <!-- NEW: Sideloading button -->
+    <div class="app" onclick="window.open('https://sideload.applejr.net', '_blank')">
+      <div class="app-icon-sl">SL</div>
+      <div class="app-title">Sideloading</div>
+      <div class="app-desc">Install apps via AppleJr</div>
     </div>
 
   </div>
 
   <div class="dock">
+    <!-- Example dock icons -->
     <div class="dock-icon" data-window="win-about">?</div>
-    <div class="dock-icon" data-window="win-settings">⚙️</div>
-    <div class="dock-icon" data-window="win-help">💬</div>
+
+    <!-- Optional: Sideloading in dock too -->
+    <div class="dock-icon" onclick="window.open('https://sideload.applejr.net', '_blank')">
+      SL
+    </div>
   </div>
 
 </div>
 
 <!-- WINDOWS -->
-<div class="window" id="win-fearn">
+<div class="window" id="win-applejr">
   <div class="window-header">
-    <div class="window-title">Fearn Repo</div>
+    <div class="window-title">AppleJr</div>
     <div class="close-btn"></div>
   </div>
   <div class="window-body">
-    <p>This opens your main repo:</p>
-    <p><a href="https://github.com/krn11ikiowo/Fearn" target="_blank">Open Fearn</a></p>
-  </div>
-</div>
-
-<div class="window" id="win-zsign">
-  <div class="window-header">
-    <div class="window-title">ZSign</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p>ZSign GitHub:</p>
-    <p><a href="https://github.com/zhlynn/zsign" target="_blank">Open ZSign</a></p>
-  </div>
-</div>
-
-<div class="window" id="win-ksign">
-  <div class="window-header">
-    <div class="window-title">KSign</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p>KSign GitHub:</p>
-    <p><a href="https://github.com/ksignteam/KSign" target="_blank">Open KSign</a></p>
-  </div>
-</div>
-
-<div class="window" id="win-sidestore">
-  <div class="window-header">
-    <div class="window-title">SideStore</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p><a href="https://github.com/SideStore/SideStore" target="_blank">Open SideStore</a></p>
-  </div>
-</div>
-
-<div class="window" id="win-altstore">
-  <div class="window-header">
-    <div class="window-title">AltStore</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p><a href="https://github.com/rileytestut/AltStore" target="_blank">Open AltStore</a></p>
+    <p>Official AppleJr guides:</p>
+    <p><a href="https://applejr.net" target="_blank">Open AppleJr</a></p>
   </div>
 </div>
 
 <div class="window" id="win-about">
   <div class="window-header">
-    <div class="window-title">About FearnJR OS</div>
+    <div class="window-title">About AppleJr OS</div>
     <div class="close-btn"></div>
   </div>
   <div class="window-body">
-    <p>FearnJR OS — a full applejr‑style web desktop.</p>
-    <p>Built entirely in one HTML file.</p>
-  </div>
-</div>
-
-<div class="window" id="win-settings">
-  <div class="window-header">
-    <div class="window-title">Settings</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p>Settings panel placeholder.</p>
-  </div>
-</div>
-
-<div class="window" id="win-help">
-  <div class="window-header">
-    <div class="window-title">Help</div>
-    <div class="close-btn"></div>
-  </div>
-  <div class="window-body">
-    <p>Edit this file in GitHub → Commit → Done.</p>
+    <p>AppleJr 2.0 — web desktop for iOS sideloading & guides.</p>
   </div>
 </div>
 
@@ -403,7 +338,7 @@ setInterval(() => {
 }, 1000);
 
 /* OPEN WINDOWS */
-document.querySelectorAll(".app, .dock-icon").forEach(el => {
+document.querySelectorAll(".app[data-window], .dock-icon[data-window]").forEach(el => {
   el.onclick = () => {
     const id = el.dataset.window;
     if (!id) return;

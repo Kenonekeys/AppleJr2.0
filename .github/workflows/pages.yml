@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         runner: 
           - ubuntu-latest

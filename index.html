@@ -103,6 +103,11 @@ footer {
   color: var(--muted);
   font-size: 13px;
 }
+
+/* SECTIONS */
+section {
+  scroll-margin-top: 80px;
+}
 </style>
 </head>
 
@@ -118,10 +123,10 @@ footer {
   <div class="grid">
 
     <!-- Sideloading -->
-    <div class="card" onclick="window.open('https://sideload.applejr.net', '_blank')">
+    <div class="card" onclick="location.href='#sideloading'">
       <div class="icon">SL</div>
       <h2>Sideloading</h2>
-      <p>Install apps through AppleJr’s sideloading service.</p>
+      <p>Install apps directly on iOS.</p>
     </div>
 
     <!-- AppleJr Guides -->
@@ -139,6 +144,46 @@ footer {
     </div>
 
   </div>
+
+  <!-- SIDLOADING SECTION -->
+  <section id="sideloading" style="max-width:900px;margin:40px auto;padding:20px;background:#14151c;border-radius:18px;border:1px solid #1f2029;">
+    <h2 style="color:#4aa3ff;">AppleJr Sideloading</h2>
+    <p style="color:#9fa3b7;font-size:14px;">
+      Install apps directly from your iPhone or iPad. No computer required.
+    </p>
+
+    <!-- Launch AppleJr Sideloading -->
+    <div style="margin-top:20px;">
+      <button onclick="window.open('https://sideload.applejr.net', '_blank')" 
+        style="padding:12px 20px;border:none;border-radius:12px;background:#4aa3ff;color:#050509;font-weight:600;font-size:15px;cursor:pointer;width:100%;">
+        Open AppleJr Sideloading
+      </button>
+    </div>
+
+    <!-- Mobile IPA Upload -->
+    <div style="margin-top:30px;padding:16px;border-radius:12px;background:#181927;">
+      <h3 style="color:#f5f5f7;margin-bottom:10px;">Upload IPA (Mobile)</h3>
+      <p style="color:#9fa3b7;font-size:13px;">
+        Choose an IPA file from your device. AppleJr Sideloading will handle the rest.
+      </p>
+
+      <input type="file" accept=".ipa" 
+        style="margin-top:12px;width:100%;padding:10px;border-radius:10px;background:#0b0c10;color:#f5f5f7;border:1px solid #1f2029;">
+      
+      <button style="margin-top:15px;padding:10px 18px;border:none;border-radius:12px;background:#4aa3ff;color:#050509;font-weight:600;width:100%;cursor:pointer;">
+        Upload to AppleJr Sideloading
+      </button>
+    </div>
+
+    <!-- Certificate Info -->
+    <div style="margin-top:30px;padding:16px;border-radius:12px;background:#181927;">
+      <h3 style="color:#f5f5f7;margin-bottom:10px;">Signing Requirements</h3>
+      <p style="color:#9fa3b7;font-size:13px;">
+        AppleJr Sideloading uses your own Apple ID or certificate.  
+        No computer is required — everything works directly on your device.
+      </p>
+    </div>
+  </section>
 
 </main>
 
